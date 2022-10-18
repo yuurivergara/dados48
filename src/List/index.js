@@ -5,11 +5,18 @@ export default function List(props){
   return(
     <View style={styles.post}>
       <View style={styles.barraPerfil}>
+        
+        <View style={styles.view}>
+          <Image 
+          source={{uri: props.data.imgperfil}}
+          style={styles.fotoFeed}
+          />
+          <Text style={styles.text}>{props.data.nome}</Text>
+        </View>
         <Image 
-        source={{uri: props.data.imgperfil}}
-        style={styles.fotoFeed}
+        source={{uri: props.data.imgPublicacao}}
+        style={styles.fotoPost}
         />
-        <Text style={styles.text}>{props.data.nome}</Text>
 
       </View>
     </View>
@@ -18,11 +25,9 @@ export default function List(props){
 
 const styles = StyleSheet.create({
   post:{
-    backgroundColor: "#E9E9E9",
     height:205,
     marginVertical: 5,
     borderRadius: 10,
-    flexDirection: "column",
     padding:25
   },
   fotoFeed:{
@@ -31,12 +36,19 @@ const styles = StyleSheet.create({
     borderRadius:10
   },
   barraPerfil:{
+    flexDirection: "column",
     paddingRight: 25,
     alignItems:"center",
-    flexDirection:"row",
   },
   text:{
     marginLeft: 20,
     fontSize: 17
+  },
+  fotoPost:{
+    height:203,
+    width:379,
+  },
+  view:{
+    flexDirection:"row"
   }
 })
