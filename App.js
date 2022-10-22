@@ -4,11 +4,15 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import Feed from './src/Feed';
 import Header from './src/Header';
 import Cadastro from './src/Cadastro';
+import Loading from './src/Loading';
+import Login from './src/Login';
+import Exame from './src/Exame';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Cadastro />
+      <Header />
+      <Exame />
 
     </View>
   );
