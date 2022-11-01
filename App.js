@@ -6,14 +6,16 @@ import Header from './src/Header';
 import Cadastro from './src/Cadastro';
 import Loading from './src/Loading';
 import Login from './src/Login';
-import Exame from './src/Exame';
+import PerfilDoutor from './src/PerfilDoutor';
+import PerfilPaciente from './src/PerfilPaciente';
+import PaginaPacientes from './src/PaginaExames';
+import PaginaExames from './src/PaginaExames';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Header />
-      <Exame />
-
+      <PaginaExames />
     </View>
   );
 }

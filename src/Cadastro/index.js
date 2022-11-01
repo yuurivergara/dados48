@@ -12,6 +12,7 @@ export default function Cadastro(){
       />
       
       <SafeAreaView style={styles.safeArea}>
+      <Text> Area de cadastro</Text>
       <TextInput
         style={styles.input}
         placeholder="CPF"
