@@ -48,24 +48,16 @@ export default function Feed(){
       imgPublicacao: 'https://sujeitoprogramador.com/instareact/foto5.png',
       likeada: false, 
       likers: 32
-    }
+    },
   ])
 
 
   return(
     <View>
-      <View style={styles.button}>
-        <Button
-          title="Fazer um novo post"
-          color={"#24BCC4"}
-          style={styles.postbox}
-        />
-      </View>
       <FlatList data={feed}
       showsVerticalScrollIndicator={false}
       keyExtractor={(item) => item.id}
       renderItem={({item})=> <List data={item} />} 
-      
       />
 
       

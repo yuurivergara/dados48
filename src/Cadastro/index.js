@@ -1,8 +1,9 @@
-import { View, TextInput, SafeAreaView, StyleSheet, Text, Image, Pressable } from "react-native";
+import { View, ScrollView, TextInput, SafeAreaView, StyleSheet, Text, Image, Pressable } from "react-native";
 import React, {useState} from "react";
 
 export default function Cadastro(){
   return(
+    <ScrollView>
     <View style={{backgroundColor: "#E9E9E9"}}>
     <View style={styles.background}>
       
@@ -12,18 +13,18 @@ export default function Cadastro(){
       />
       
       <SafeAreaView style={styles.safeArea}>
-      <Text> Area de cadastro</Text>
+      <Text style={{textAlign:"center", marginBottom:8}}> Preencha as informações abaixo para se cadastrar no APP.</Text>
       <TextInput
         style={styles.input}
         placeholder="CPF"
       />
       <TextInput
         style={styles.input}
-        placeholder="CRM"
+        placeholder="EMAIL"
       />
       <TextInput
         style={styles.input}
-        placeholder="CRM"
+        placeholder="TELEFONE"
       />
       <TextInput
         style={styles.input}
@@ -44,6 +45,7 @@ export default function Cadastro(){
     </Pressable>
     </View>
     </View>
+    </ScrollView>
   )
 }
 

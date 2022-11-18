@@ -4,7 +4,7 @@ import Exames from "../Exames";
 import SelectTipe from "../SelectTipe";
 import SelectOrder from "../SelectOrder";
 
-export default function PaginaExames(){
+export default function PaginaExamesMedico(){
   const [pacientes, setPacientes] = useState([
     {
       id: '1', 
@@ -45,11 +45,9 @@ export default function PaginaExames(){
   return(
     <View style={styles.container}>
       <View style={{height:60, backgroundColor:"#E9E9E9", alignItems:"center", justifyContent:"center"}}>
-        <Text style={{fontSize:32}}>Seus exames</Text>
+        <Text style={{fontSize:32}}>Exames</Text>
       </View>
-      <TouchableOpacity style={styles.button}>
-        <Text style={{color:"white"}}>ADICIONAR EXAME</Text>
-      </TouchableOpacity>
+ 
       <FlatList 
       data={pacientes}
       showsVerticalScrollIndicator={false}

@@ -8,14 +8,20 @@ import Loading from './src/Loading';
 import Login from './src/Login';
 import PerfilDoutor from './src/PerfilDoutor';
 import PerfilPaciente from './src/PerfilPaciente';
-import PaginaPacientes from './src/PaginaExames';
+import PaginaPacientes from './src/PaginaPacientes';
 import PaginaExames from './src/PaginaExames';
+import Perfil from './src/Perfil';
+import Exames from './src/Exames';
+import PaginaGrupo from './src/PaginaGrupo';
+import Grupos from './src/Grupos';
+import PaginaExamesMedico from './src/PaginaExamesMedico';
+import PaginaMedico from './src/PaginaMedico';
+import PaginaUsuario from './src/PaginaUsuario';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Header />
-      <PaginaExames />
+      <PaginaUsuario />
     </View>
   );
 }

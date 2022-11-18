@@ -1,48 +1,48 @@
 import React from "react"
-import { View, Text, StyleSheet, Image, Pressable } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable, TouchableOpacity } from "react-native";
 
 export default function PerfilPaciente(){
   return(
   <View style={styles.container}>
-    <View style={styles.container2}>
+    <TouchableOpacity style={styles.container2}>
       <Image 
       source={{uri: 'https://sujeitoprogramador.com/instareact/fotoPerfil1.png'}}
       style={styles.imgperfil}
       />
       <Text
       style={styles.text}
-      >Dr Arthur</Text>
-    </View>
+      >Arthur</Text>
+    </TouchableOpacity>
 
     <View style={styles.icons}>
-      <View style={styles.box}>
+      <TouchableOpacity style={styles.box}>
         <Image 
         source={require("../img/icons/exames.png")}
         />
-        <Text> DOUTORES</Text>
-      </View>
-      <View style={styles.box}>
+        <Text> MEDICOS</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.box}>
         <Image 
         source={require("../img/icons/exames.png")}
         />
-        <Text> EXAMES</Text>
-      </View>
+        <Text>NOTIFICAÇÕES</Text>
+      </TouchableOpacity>
       
     </View>
 
     <View style={styles.icons}>
-      <View style={styles.box}>
+      <TouchableOpacity style={styles.box}>
         <Image 
         source={require("../img/icons/exames.png")}
         />
-        <Text> FEED</Text>
-      </View>
-      <View style={styles.box}>
+        <Text> EXAMES</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.box}>
         <Image 
         source={require("../img/icons/exames.png")}
         />
-        <Text> FAZER POST</Text>
-      </View>
+        <Text> GRUPOS</Text>
+      </TouchableOpacity>
       
     </View>
 

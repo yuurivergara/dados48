@@ -5,7 +5,7 @@ export default function Exames(props){
   return(
       <TouchableOpacity style={styles.box}>
           <Image  
-          source={{uri: "https://domf5oio6qrcr.cloudfront.net/medialibrary/8884/Blood-tests-results.jpg"}}
+          source={{uri: "https://www.justcriminallaw.com/wp-content/uploads/primary-images/1302-1300.jpg"}}
           style={{height:160, width:150}}
           />
           <View style={{flexDirection:"column", padding:50}}>
