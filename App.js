@@ -16,12 +16,15 @@ import PaginaGrupo from './src/PaginaGrupo';
 import Grupos from './src/Grupos';
 import PaginaExamesMedico from './src/PaginaExamesMedico';
 import PaginaMedico from './src/PaginaMedico';
-import PaginaUsuario from './src/PaginaUsuario';
+import PaginaContatoUsuario from './src/PaginaContatoUsuario';
+import PaginaContatoProfissional from './src/PaginaContatoProfissional';
+import PaginaSeusProfissionais from './src/PaginaSeusProfissionais';
+import PaginaSeusPacientes from './src/PaginaSeusPacientes';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <PaginaUsuario />
+      <PaginaSeusPacientes />
     </View>
   );
 }

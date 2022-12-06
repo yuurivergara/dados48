@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, Text, SafeAreaView, TouchableOpacity } from "r
 import Iconicons from "@expo/vector-icons/Ionicons"
 
 
-export default function PaginaUsuario(){
+export default function PaginaContatoUsuario(){
   return(
     <View>
       <View style={styles.box1}>
@@ -49,16 +49,21 @@ const styles = StyleSheet.create({
   box1:{
     height:275,
     backgroundColor:"#E9E9E9",
-    paddingTop: "5%"
+    paddingTop: "5%",
+    borderBottomWidth:1,
+    borderBottomColor:"#24BCC4"
   },
   img:{
     height: 170
   },
   box2:{
-    marginTop:15,
+    marginTop:7,
     backgroundColor:"#E9E9E9",
     height: "100%",
-    paddingHorizontal:24
+    paddingHorizontal:24,
+    borderTopWidth: 1,
+    borderColor:"#24BCC4"
+    
   },
   button:{
     height:72,
