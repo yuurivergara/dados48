@@ -20,11 +20,12 @@ import PaginaContatoUsuario from './src/PaginaContatoUsuario';
 import PaginaContatoProfissional from './src/PaginaContatoProfissional';
 import PaginaSeusProfissionais from './src/PaginaSeusProfissionais';
 import PaginaSeusPacientes from './src/PaginaSeusPacientes';
+import LoginProvisoria from "./src/LoginProvisoria"
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <PaginaSeusPacientes />
+      <LoginProvisoria />
     </View>
   );
 }

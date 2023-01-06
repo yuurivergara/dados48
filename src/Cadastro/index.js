@@ -1,82 +1,108 @@
-import { View, ScrollView, TextInput, SafeAreaView, StyleSheet, Text, Image, Pressable } from "react-native";
-import React, {useState} from "react";
+import { View, ScrollView, TextInput, StyleSheet, Text, Image, TouchableOpacity, Alert } from "react-native";
+import React, {useEffect, useState} from "react";
+
+import api from "../Services/Api"
 
 export default function Cadastro(){
+const [nome, setNome] = useState("")
+const [sobrenome, setSobrenome] = useState("")
+const [nascimento, setNascimento] = useState("")
+const [email, setEmail] = useState("")
+const [senha, setSenha] = useState("")
+  
+
+const handlePost = () => {
+  api.post("/APP1/controller/usuario.php?criarusuario",{
+      "nome": nome,
+      "sobrenome": sobrenome,
+       "data_de_nascimento": nascimento,
+       "email": email,
+       "senha": senha
+      }).then(({data}) => Alert.alert("Sucesso",data.mensagens.toString())).catch(function(error) {
+        Alert.alert("Erro",error.response.data.mensagens.toString())
+       });
+    }
+    const [error, setError] = useState("")
+ 
+
   return(
-    <ScrollView>
-    <View style={{backgroundColor: "#E9E9E9"}}>
-    <View style={styles.background}>
+    <View style={{flex:1, backgroundColor:"#FFFFFF", alignItems:"center", paddingHorizontal:"5%",paddingVertical:"15%", flexDirection:"column", justifyContent: "space-between"}}>
       
       <Image 
       source={require("../img/logo.png")}
       style={styles.img}
-      />
       
-      <SafeAreaView style={styles.safeArea}>
-      <Text style={{textAlign:"center", marginBottom:8}}> Preencha as informações abaixo para se cadastrar no APP.</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="CPF"
       />
-      <TextInput
+      <Text style={{color: "red"}}></Text>
+      <ScrollView style={{marginTop:"15%"}}>
+        <TextInput 
         style={styles.input}
-        placeholder="EMAIL"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="TELEFONE"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="CRM"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="CRM"
-      />
-    </SafeAreaView>
+        placeholder="Nome..."
+        onChangeText={value => setNome(value)}
+        >
 
-    <Text style={styles.text}>
-    Ao se cadastrar, você concorda com nossos <Text style={{fontWeight: "bold"}}>Termos e Política de Privacidade </Text>.
-    </Text>
+        </TextInput >
+      
+        <TextInput 
+        style={styles.input}
+        placeholder="Sobrenome..."
+        onChangeText={value => setSobrenome(value)}
+        >
 
-    <Pressable style={styles.button}>
-      <Text style={styles.buttonText}>FINALIZAR CADASTRO</Text>
-    </Pressable>
+        </TextInput>
+      
+        <TextInput 
+        style={styles.input}
+        placeholder="Nascimento (DD/MM/AAAA)..."
+        onChangeText={value => setNascimento(value)}
+        >
+
+        </TextInput>
+      
+        <TextInput 
+        style={styles.input}
+        placeholder="Email..."
+        onChangeText={value => setEmail(value)}
+        >
+
+        </TextInput>
+      
+        <TextInput 
+        style={styles.input}
+        placeholder="Senha..."
+        secureTextEntry={true}
+        onChangeText={value => setSenha(value)}
+        >
+
+        </TextInput>
+      </ScrollView>
+      
+      <Text style={styles.text}>
+        Ao clicar em se cadastrar voce concorda com os nossos Termos e Política de Privacidade
+      </Text>
+      <TouchableOpacity style={styles.button} onPress={handlePost}>
+        <Text style={styles.buttonText}>FINALIZAR CADASTRO</Text>
+      </TouchableOpacity>
+      
     </View>
-    </View>
-    </ScrollView>
-  )
-}
+  )}
 
 const styles= StyleSheet.create({
-  background:{
-    marginVertical:35,
-    alignItems:"center",
-    justifyContent:"center",
-    marginHorizontal:25,
-  },
   img:{
-    justifyContent:"center",
     width:179,
     height:130,
   },
   input: {
-    marginVertical:8,
+    marginVertical:10,
     height: 39,
-    width:327,
-    marginHorizontal:5,
+    width:280,
     borderWidth: 1,
     padding: 10,
     borderColor:"#363636",
     backgroundColor:"#C0C0C0",
     borderRadius:8
   },
-  safeArea:{
-    marginTop:40,
-  },
   button:{
-    marginTop:12,
     width:189,
     height:63,
     backgroundColor:"#04446C",
@@ -88,7 +114,6 @@ const styles= StyleSheet.create({
     color:"#FFFFFF"
   },
   text:{
-    marginTop:25,
     width:244,
     height:92,
     textAlign:"center"
